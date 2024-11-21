@@ -30,17 +30,17 @@
         </button>
         <div class="collapse navbar-collapse text-center" id="navbarNav">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
+                <li class="nav-item">
                     <hr class="d-block d-md-none">
-                    <a class="nav-link" href="{{ route('home') }}">Főoldal<span class="sr-only">(jelenlegi)</span></a>
+                    <a class="nav-link" href="{{ route('home') }}">Főoldal</a>
                 </li>
                 <li class="nav-item">
                     <hr class="d-block d-md-none">
                     <a class="nav-link" href="{{ route('login') }}">Bejelentkezés</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item active">
                     <hr class="d-block d-md-none">
-                    <a class="nav-link" href="{{ route('register') }}">Regisztráció</a>
+                    <a class="nav-link" href="{{ route('register') }}">Regisztráció<span class="sr-only">(jelenlegi)</span></a>
                 </li>
                 <li class="nav-item">
                     <hr class="d-block d-md-none">
@@ -55,26 +55,18 @@
         <div class="row">
             <div class="col-md-3 col-sm-12 d-none d-md-block"></div>
             <main class="col-md-6 col-sm-12">
-                <!--Galériát ide-->
-                <h2 class="display-3">Helló! 👋</h2>
-                <h4>Üdvözöllek az Online Portán!</h4>
-                <h5>Miben segíthetek?</h5>
-                <div class="mt-3 justify-content-around text-center">
-                    <button type="button" class="btn btn-primary">Kolis akarok lenni!</button>
-                    <button type="button" class="btn btn-outline-secondary">Informálódni szeretnék!</button> <!--ez csak lentebb görget-->
-                </div>
-              
-                <div class="py-5 justify-content-between">
-                    <h4 class="display-4">Információs pult</h4>
-                    <p>Itt talász meg minden olyan informácót ami a jelentkezéshez szükséges</p>
-                    <h5>Jelentkezés menete</h5>
-                    <ol>
-                        <li>Regisztrálj az oldalra!</li>
-                        <li>Töltsd ki a <u>Nyilvántartó lapot</u> és a <u>Bentlakási szerőzdést</u></li>
-                        <li>Válaszd ki hogy melyik szobában szeretnél lakni!</li>
-                        <li>Majd nyomj a "Jelentkezés elküldésre" gombra!</li>
-                    </ol>
-                </div>
+                <h4 class="display-4">Regisztráció</h4>
+                <form action="#" method="get"><!--forward to login main oldalra-->
+                    <div class="form-group my-5">
+                        <label for="neptunkod">Neptun kód<span style="color:red">*</span></label>
+                        <input type="text" class="form-control mb-3" id="neptunkod" placeholder="ABC123" required>
+                        <label for="email">Email cím <span style="color:red">*</span></label>
+                        <input type="email" class="form-control mb-3" id="email" placeholder="teszt@pelda.hu" required>
+                        <label for="password">Jelszó <span style="color:red">*</span></label>
+                        <input type="password" class="form-control" id="password" placeholder="••••••••" required>
+                        <input type="submit" class="w-100 btn btn-primary mt-3" value="Regisztráció!">
+                    </div>
+                </form>
             </main>
             <div class="col-md-3 col-sm-12 d-none d-md-block"></div>
         </div>
