@@ -11,11 +11,11 @@
             </li>
             <li class="nav-item">
                 <hr class="d-block d-md-none">
-                <a class="nav-link" href="{{ route('login') }}">Bejelentkezés</a>
+                <a class="nav-link" href="#">Bejelentkezés</a>
             </li>
             <li class="nav-item">
                 <hr class="d-block d-md-none">
-                <a class="nav-link" href="{{ route('register') }}">Regisztráció</a>
+                <a class="nav-link" href="#">Regisztráció</a>
             </li>
             <li class="nav-item">
                 <hr class="d-block d-md-none">
