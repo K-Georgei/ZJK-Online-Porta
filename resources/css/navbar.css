@@ -1,0 +1,33 @@
+.navbar {
+    background: linear-gradient(90deg, rgba(4,60,90,1) 0%, rgba(9,87,127,1) 100%);
+    background-size: cover;
+}
+
+.navbar .nav-link {
+    color: white !important;
+    filter: brightness(75%);
+    transition: 0s;
+}
+
+.navbar .nav-link:hover {
+    color: white !important;
+    filter: brightness(100%);
+    transition: 0.5s cubic-bezier(0.83, 0, 0.17, 1);
+    
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0; /* Position at the bottom of the text */
+    left: 50%; /* Start from the middle */
+    width: 0;
+    height: 2px; /* Thickness of the underline */
+    background-color: white;
+    transition: width 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55); /* Bounce effect */
+    transform: translateX(-50%);
+}
+
+.nav-link:hover::after {
+    width: 100%; /* Expand to full width on hover */
+}

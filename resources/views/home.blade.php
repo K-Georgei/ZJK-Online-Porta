@@ -17,10 +17,16 @@
 
             <div class="mt-5 text-center">
                 <!-- Két gomb, amelyek a funkciókhoz vezetnek -->
-                <button type="button" class="btn btn-primary mx-2">Kolis akarok lenni!</button>
-                <a href="#informacio" class="btn btn-outline-secondary mx-2" data-bs-target="#informacio" aria-expanded="false" aria-controls="informacio">
+                <button type="button" class="btn btn-primary m-2">Kolis akarok lenni!</button>
+                <a href="#informacio" class="btn btn-outline-secondary m-2" data-bs-target="#informacio" aria-expanded="false" aria-controls="informacio">
                     Informálódni szeretnék!
                 </a>
+            </div>
+
+            <div class="card">
+                <div class="card-body">
+                    <!--gallériát ide csak 3 képet-->
+                </div>
             </div>
 
             <!-- Információs rész a gombok alatt -->
