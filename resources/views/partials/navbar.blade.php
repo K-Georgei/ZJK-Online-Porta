@@ -11,7 +11,7 @@
             </li>
             <li class="nav-item">
                 <hr class="d-block d-md-none">
-                <a class="nav-link" href="#">Bejelentkezés</a>
+                <a class="nav-link" href="{{route("filament.admin.pages.dashboard")}}">Bejelentkezés</a>
             </li>
             <li class="nav-item">
                 <hr class="d-block d-md-none">
