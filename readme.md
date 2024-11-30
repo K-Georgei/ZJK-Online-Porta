@@ -1,7 +1,7 @@
 # ZJK Online Porta Specifikációk
 
 ## A probléma pár szóban:
-- Az adminisztrációs munkák nagyon lassan folynak mivel még az egész papíron folyik.
+- Az adminisztrációs munkák nagyon lassan folynak mivel még az egész papíron történik.
 - Nehéz nyomonkövetni hogy melyik szoba mikor van lefoglalva / milyen az állapota.
 
 ## A rendszer célja:
