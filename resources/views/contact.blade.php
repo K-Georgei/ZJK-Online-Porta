@@ -16,8 +16,9 @@
                     <input type="email" class="form-control" id="email" placeholder="teszt@pelda.hu" required>
                 </div>
                 <div class="mb-3">
-                    <label class="form-label" for="problemType">Mennyire Sürgős? <span style="color:red">*</span></label>
+                    <label class="form-label" for="problemType">Probléma típusa? <span style="color:red">*</span></label>
                     <select class="form-control" name="problemType" id="problemType">
+                        <option value="none" selected disabled hidden>Válassze egy probléma típust!</option>
                         <option value="Szoba">Szoba</option>
                         <option value="Emelet">Emelet</option>
                         <option value="Konyha">Konyha</option>
