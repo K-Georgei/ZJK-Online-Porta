@@ -16,6 +16,18 @@
                     <input type="email" class="form-control" id="email" placeholder="teszt@pelda.hu" required>
                 </div>
                 <div class="mb-3">
+                    <label class="form-label" for="problemType">Probléma típusa? <span style="color:red">*</span></label>
+                    <select class="form-control" name="problemType" id="problemType">
+                        <option value="none" selected disabled hidden>Válassze egy probléma típust!</option>
+                        <option value="Szoba">Szoba</option>
+                        <option value="Emelet">Emelet</option>
+                        <option value="Konyha">Konyha</option>
+                        <option value="Regist">Regisztráció</option>
+                        <option value="Foglalas">Foglalás</option>
+                        <option value="Egyeb">Egyéb</option>
+                    </select>
+                </div>
+                <div class="mb-3">
                     <label for="problemfield" class="form-label">Írd ide a mondanivalód <span style="color:red">*</span></label>
                     <textarea class="form-control" id="problemfield" rows="5" placeholder="Írd meg, miben segíthetünk..." required></textarea>
                 </div>
