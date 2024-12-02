@@ -7,6 +7,10 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Booking extends Model
 {
+    protected $with = ["user","room"];
+
+
+
     /**
      * Get the user associated with the Booking
      *
@@ -26,6 +30,4 @@ class Booking extends Model
     {
         return $this->belongsTo(Room::class);
     }
-
-
 }
