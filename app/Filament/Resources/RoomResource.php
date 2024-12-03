@@ -6,10 +6,13 @@ use App\Filament\Resources\RoomResource\Pages;
 use App\Filament\Resources\RoomResource\RelationManagers;
 use App\Models\Room;
 use Filament\Forms;
+use Filament\Forms\Components\Select;
+use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Columns\TextInputColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
@@ -18,13 +21,17 @@ class RoomResource extends Resource
 {
     protected static ?string $model = Room::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $pluralModelLabel = "szobák";
+    protected static ?string $modelLabel = "szoba";
+    protected static ?string $navigationIcon = 'heroicon-o-building-office-2';
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
-                //
+                TextInput::make('room_number')->label('Szobaszám')->required(),
+                Select::make('status')->options(['1' => 'Üres','2' => 'Tele','3' => 'Használatban', '4' => 'Karbantartás alatt'])->native(false)->required(),
+                //TextInput::make('capacity')->label('Férőhely')->numeric()->maxValue(3)->minValue(0)->required(), //TODO js kezelje ha a lakók száma 0 => akkor a select üres ha >0 akkor használatban ha pedig 3 akkor tele ez működjön visszafelé is
             ]);
     }
 
@@ -34,6 +41,7 @@ class RoomResource extends Resource
             ->columns([
                 TextColumn::make('room_number')->label('Szobaszám')->width(1),
                 TextColumn::make('status')->label('Státusz')->width(1),
+                TextColumn::make('capacity')->label('Férőhely')->width(1),
             ])
             ->filters([
                 //
