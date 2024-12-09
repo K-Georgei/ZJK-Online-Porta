@@ -24,7 +24,7 @@ class CreateUser extends CreateRecord
     protected function handleRecordCreation(array $data): Model
     {
         $record = parent::handleRecordCreation($data);
-        $record->assignRole(['super_admin']); //TODO ne admin legyen
+        $record->assignRole(['user']);
         return $record;
     }
 

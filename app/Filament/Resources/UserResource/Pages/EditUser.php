@@ -12,6 +12,11 @@ class EditUser extends EditRecord
 
     protected function getHeaderActions(): array
     {
+        if(auth()->user()->hasRole("user"))
+        {
+            return [];
+        }
+        
         return [
             Actions\DeleteAction::make(),
         ];
@@ -22,6 +27,11 @@ class EditUser extends EditRecord
     {
         $data["neptun_code"] = strtolower( $data["neptun_code"]);
         return $data;
+    }
+
+    protected function authorizeAccess(): void
+    {
+        abort_unless($this->getRecord()->id == auth()->id() || !auth()->user()->hasRole("user"), 403);
     }
 
 

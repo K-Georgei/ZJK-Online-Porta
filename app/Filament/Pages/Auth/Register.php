@@ -13,7 +13,7 @@ class Register extends BaseRegister
     protected function handleRegistration(array $data): Model
     {
         $user = parent::handleRegistration($data);
-        $user->assignRole(["super_admin"]); //TODO ne admin legyen ez sem
+        $user->assignRole(["user"]);
         return $user;
     }
 

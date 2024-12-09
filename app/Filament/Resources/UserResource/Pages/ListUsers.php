@@ -16,4 +16,13 @@ class ListUsers extends ListRecords
             Actions\CreateAction::make(),
         ];
     }
+
+
+    protected function authorizeAccess(): void
+    {
+        abort_unless(!auth()->user()->hasRole("user"), 403);
+    }
+
+
+
 }
