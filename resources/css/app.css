@@ -1,8 +1,10 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+ /* Az egyedi stílusok importálása */
+@import 'navbar.css';
+@import 'footer.css';
 
-@layer{
-    @import 'navbar.css';
-    @import 'footer.css';
-}
+ /* Ezután a Tailwind importálása */
+ @layer{
+    @tailwind base;
+    @tailwind components;
+    @tailwind utilities;
+ }

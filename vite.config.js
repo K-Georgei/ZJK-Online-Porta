@@ -18,4 +18,7 @@ export default defineConfig({
         'process.env.APP_ENV': JSON.stringify(process.env.APP_ENV),
         'process.env.APP_URL': JSON.stringify(process.env.APP_URL),
     },
+    build: {
+        target: 'esnext', // Itt az 'esnext' lehetőséggel támogathatod a top-level awaitet
+    },
 });

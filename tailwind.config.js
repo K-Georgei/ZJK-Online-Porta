@@ -2,10 +2,11 @@ import defaultTheme from 'tailwindcss/defaultTheme';
 
 /** @type {import('tailwindcss').Config} */
 export default {
+    darkMode: 'class',
+    // prefix: 'tw-',
     content: [
         './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
-        './storage/framework/views/*.php',
-        './resources/**/*.blade.php',
+        // './storage/framework/views/*.php',
         './resources/views/filament/pages/*.blade.php',
         './app/Filament/*/.php',
         './resources/**/*.js',
@@ -18,5 +19,12 @@ export default {
             },
         },
     },
+
+    safelist: [
+        "tw-bg-black",
+        "tw-bg-white",
+    ],
+
+
     plugins: [],
 };
