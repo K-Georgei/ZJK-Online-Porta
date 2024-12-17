@@ -7,6 +7,21 @@ const cancelButton = document.getElementById("cancelButton");
 
 
 
+const showModal = () =>{
+    // Modal megjelenítése
+    modal.classList.remove("hidden");
+    modal.classList.add("flex");
+}
+
+
+const hideModal = () =>{
+    // Modal elrejtése
+    modal.classList.add("hidden");
+    modal.classList.remove("flex");
+}
+
+
+
 //Adatok lekérdezése {API}
 const getAvaiableRooms = async () => {
     const URL = "/api/user";
@@ -32,8 +47,7 @@ const createRoomElement = (room) => {
         modalRoomInfo.textContent = `Biztosan lefoglalja a(z) ${selectedRoom.room_number}. szobát?`;
 
         // Modal megjelenítése
-        modal.classList.remove("hidden");
-        modal.classList.add("flex");
+        showModal();
     });
 
     return roomElement;
@@ -50,6 +64,9 @@ confirmButton.addEventListener("click", async () => {
     if (!selectedRoom) return;
 
     const data = { room:  selectedRoom};
+
+    // Modal elrejtése
+    hideModal();
 
     sendDataToBackend(data);
 
@@ -90,13 +107,37 @@ const sendDataToBackend = async (data) => {
         });
 
         const result = await response.json(); // Backend válasz
-        console.log("Sikeres válasz a szervertől:", result);
+        // console.log(result);
 
-        new FilamentNotification()
-        .title('Sikeres foglalás')
-        .body(result)
-        .success()
-        .send()
+        if (result == 200) {
+            new FilamentNotification()
+            .title('Siker')
+            .body("Sikeres foglalás")
+            .success()
+            .send()
+
+            const bookingMain = document.getElementById("booking-main");
+
+            bookingMain.style.pointerEvents = "none";
+            setTimeout(() => {
+                // Események visszaállítása
+                bookingMain.style.pointerEvents = "auto";
+                Livewire.dispatch('booking-created');
+            }, 6000);
+            
+
+         
+        }
+        else{
+            new FilamentNotification()
+            .title('Hiba')
+            .body("Ez a szoba megtelt")
+            .icon("heroicon-o-x-circle")
+            .iconColor("danger")
+            .color("danger")
+            .send()
+        }
+
 
     } catch (error) {
         console.error("Hiba történt a kérés során:", error);
@@ -112,5 +153,14 @@ const sendDataToBackend = async (data) => {
 };
 
 
+
+
+
+
+
+
+
+
+// MAIN
 
 renderRooms();

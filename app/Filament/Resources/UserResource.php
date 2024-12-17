@@ -98,11 +98,7 @@ class UserResource extends Resource
                 TextInput::make('personal_number')
                     ->label('Személyi szám')
                     ->required(),
-                
-                FileUpload::make('profile_picture')
-                    ->label('Profilkép')
-                    ->required(),
-                ]);
+            ]);
     }
 
     public static function table(Table $table): Table
@@ -148,4 +144,13 @@ class UserResource extends Resource
             'edit' => Pages\EditUser::route('/{record}/edit'),
         ];
     }
+
+    public static function getNavigationLabel(): string
+    {
+        if (auth()->user()->hasRole("user")) {
+            return "Felhasználó";
+        }
+        return static::$navigationLabel ?? static::getTitleCasePluralModelLabel();
+    }
+
 }

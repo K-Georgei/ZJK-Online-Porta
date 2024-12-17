@@ -31,7 +31,6 @@ class RoomResource extends Resource
             ->schema([
                 TextInput::make('room_number')->label('Szobaszám')->required(),
                 Select::make('status')->options(['1' => 'Üres','2' => 'Tele','3' => 'Használatban', '4' => 'Karbantartás alatt'])->native(false)->required(),
-                //TextInput::make('capacity')->label('Férőhely')->numeric()->maxValue(3)->minValue(0)->required(), //TODO js kezelje ha a lakók száma 0 => akkor a select üres ha >0 akkor használatban ha pedig 3 akkor tele ez működjön visszafelé is
             ]);
     }
 

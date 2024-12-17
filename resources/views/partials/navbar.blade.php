@@ -15,7 +15,8 @@
             </li>
             <li class="nav-item">
                 <hr class="d-block d-md-none">
-                <a class="nav-link" href="#">Regisztráció</a>
+                {{-- TODO nav link --}}
+                <a class="nav-link" href="#">Regisztráció</a> 
             </li>
             <li class="nav-item">
                 <hr class="d-block d-md-none">

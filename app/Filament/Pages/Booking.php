@@ -7,6 +7,7 @@ use Filament\Actions\Action;
 use Filament\Forms\Components\Grid;
 use Filament\Forms\Components\TextInput;
 use Filament\Tables\Columns\TextColumn;
+use Livewire\Attributes\On;
 
 class Booking extends Page
 {
@@ -15,7 +16,19 @@ class Booking extends Page
     protected static string $view = 'filament.pages.booking';
 
 
+    #[On("booking-created")]
+    public function bookingCreated()
+    {
+        return redirect()->route("filament.admin.pages.dashboard");
+    }
 
+    public static function canAccess(): bool
+    {
+        $user = auth()->user();
+        return $user->keresztnev && !auth()->user()->booking;
+        //TODO mezők vizsgálata
+
+    }
 
 
 }

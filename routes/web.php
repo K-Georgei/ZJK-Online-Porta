@@ -1,6 +1,8 @@
 <?php
 
 use App\Models\Booking;
+use App\Models\Room;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 
