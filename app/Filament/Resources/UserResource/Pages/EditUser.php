@@ -5,6 +5,7 @@ namespace App\Filament\Resources\UserResource\Pages;
 use App\Filament\Resources\UserResource;
 use Filament\Actions;
 use Filament\Resources\Pages\EditRecord;
+use Illuminate\Support\Facades\Storage;
 
 class EditUser extends EditRecord
 {
@@ -33,6 +34,5 @@ class EditUser extends EditRecord
     {
         abort_unless($this->getRecord()->id == auth()->id() || !auth()->user()->hasRole("user"), 403);
     }
-
 
 }
